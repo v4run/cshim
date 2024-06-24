@@ -1,0 +1,11 @@
+x-common: &app
+  build:
+    context: .
+
+services:
+  app:
+    <<: *app
+  shimapp:
+    <<: *app
+    environment:
+      LD_PRELOAD: /project/shim.so
